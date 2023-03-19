@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Play Song</title>
+	<script src="https://sdk.scdn.co/spotify-player.js"></script>
+</head>
+<body>
+	<h1>Play Song</h1>
+	<div>
+		<label for="artist">Artist:</label>
+		<input type="text" id="artist">
+	</div>
+	<div>
+		<label for="song">Song:</label>
+		<input type="text" id="song">
+	</div>
+	<button onclick="search()">Search</button>
+	<div id="player"></div>
+	<script>
+		function search() {
+			const artist = document.getElementById('artist').value;
+			const song = document.getElementById('song').value;
+			fetch(`/spotify?artist=${encodeURIComponent(artist)}&song=${encodeURIComponent(song)}`)
+			.then(response => response.json())
+			.then(data => {
+				const uri = data.uri;
+				const player = new Spotify.Player({
+					name: 'Play Song',
+					getOAuthToken: cb => { cb(data.access_token); }
+				});
+				player.addListener('ready', ({ device_id }) => {
+					console.log('Ready with Device ID', device_id);
+					const play = ({
+						spotify_uri,
+						playerInstance: {
+							_options: {
+								getOAuthToken,
+								id
+							}
+						}
+					}) => {
+						getOAuthToken(access_token => {
+							fetch(`https://api.spotify.com/v1/me/player/play?device_id=${id}`, {
+								method: 'PUT',
+								body: JSON.stringify({ uris: [spotify_uri] }),
+								headers: {
+									'Content-Type': 'application/json',
+									'Authorization': `Bearer ${access_token}`
+								},
+							});
+						});
+					};
+					play({
+						playerInstance: player,
+						spotify_uri: uri,
+					});
+				});
+				player.connect();
+				document.getElementById('player').innerHTML = `Playing ${artist} - ${song}`;
+			});
+		}
+	</script>
+</body>
+</html>
