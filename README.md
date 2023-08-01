@@ -36,6 +36,10 @@ pip install -r requirements.txt
 ## Usage
 
 1. Run the `app.py` script to start the Emotion-Based Song Playe
+## Screenshots
+![WhatsApp Image 2023-08-01 at 23 29 21](https://github.com/UDAYAGIRICHARAN/Spotify_face_emotion_recommendation/assets/67089878/4dbbaf2b-7f99-48d0-83ca-f0cc442ae858)
+![WhatsApp Image 2023-08-01 at 23 29 21](https://github.com/UDAYAGIRICHARAN/Spotify_face_emotion_recommendation/assets/67089878/b7136365-f918-418f-8300-57c81f7ecac8)
+
 
 
 ## python app.py
