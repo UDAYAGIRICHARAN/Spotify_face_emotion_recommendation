@@ -1,0 +1,8 @@
+flask
+gunicorn
+spotipy
+pandastable
+opencv-python
+tensorflow
+keras
+pandas
