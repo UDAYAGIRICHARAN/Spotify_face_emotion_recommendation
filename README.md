@@ -22,15 +22,17 @@ The Emotion-Based Song Player is a Python application that utilizes computer vis
 1. Clone the repository to your local machine:
 
    ```
-   git clone https://github.com/your_username/emotion-based-song-player.git
-   cd emotion-based-song-player
+   git clone https://github.com/UDAYAGIRICHARAN/Spotify_face_emotion_recommendation.git
+   cd Spotify_face_emotion_recommendation
    ```
    
 2. Install the required packages using pip:
-   ```
 
+```
 pip install -r requirements.txt
 
+
+```
 ## Usage
 
 1. Run the `app.py` script to start the Emotion-Based Song Playe
