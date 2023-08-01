@@ -52,6 +52,4 @@ pip install -r requirements.txt
 
 - The English and Hindi song lists for each emotion are stored in CSV format under the `songs` and `songs1` directories, respectively.
 
-- Each CSV file should contain the columns: 'Name' and 'song_url', where 'Name' represents the song name and 'song_url' is the URL to the song.
-
-- You can add or modify songs in the CSV files to customize the song recommendations for each emotion.
+-sportify api will search song and give the result based on song name, Singer name..etc
