@@ -28,11 +28,11 @@ The Emotion-Based Song Player is a Python application that utilizes computer vis
    
 2. Install the required packages using pip:
 
-```
-pip install -r requirements.txt
-
-
-```
+   ```
+   pip install -r requirements.txt
+   
+   
+   ```
 ## Usage
 
 1. Run the `app.py` script to start the Emotion-Based Song Playe
